@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="persistenceUnit">
+        <class>com.cep.entity.news.NewsBaseInfo</class>
+        <class>com.cep.entity.news.NewsCommentInfo</class>
+        <class>com.cep.entity.news.NewsFileInfo</class>
+        <class>com.cep.entity.news.NewsPraiseInfo</class>
+        <class>com.cep.entity.news.NewsTopInfo</class>
+        <class>com.cep.entity.news.NewsType</class>
+        <class>com.cep.entity.master.UserBaseInfo</class>
+        <class>com.cep.entity.master.UserPasswordInfo</class>
+        <class>com.cep.entity.master.AdminUserCookie</class>
+        <class>com.cep.entity.master.AdminUserInfo</class>
+        <class>com.cep.entity.file.DirInfo</class>
+        <class>com.cep.entity.file.UploadFileInfo</class>
+        <class>com.cep.entity.master.UserToken</class>
+        <class>com.cep.entity.activity.ActivityBaseInfo</class>
+        <class>com.cep.entity.activity.ActivityCommentInfo</class>
+        <class>com.cep.entity.activity.ActivityFileInfo</class>
+        <class>com.cep.entity.activity.ActivityPraiseInfo</class>
+        <class>com.cep.entity.activity.ViewActivityBaseInfo</class>
+        <class>com.cep.entity.activity.ActivityType</class>
+        <class>com.cep.entity.activity.view.ViewActivityBaseInfo</class>
+        <class>com.cep.entity.activity.view.ViewActivityCommnetInfo</class>
+        <class>com.cep.entity.activity.view.ViewActivityFileInfo</class>
+        <class>com.cep.entity.activity.view.ViewActivityPraiseInfo</class>
+        <class>com.cep.entity.imgText.ImgTextBaseInfo</class>
+        <class>com.cep.entity.imgText.ImgTextCommentInfo</class>
+        <class>com.cep.entity.imgText.ImgTextFileInfo</class>
+        <class>com.cep.entity.imgText.ImgTextPraiseInfo</class>
+        <class>com.cep.entity.imgText.ImgTextType</class>
+        <class>com.cep.entity.imgText.view.ViewImgTextBaseInfo</class>
+        <class>com.cep.entity.imgText.view.ViewImgTextCommentInfo</class>
+        <class>com.cep.entity.imgText.view.ViewImgTextFileInfo</class>
+        <class>com.cep.entity.imgText.view.ViewImgTextPraiseInfo</class>
+        <class>com.cep.entity.user.ClassBaseInfo</class>
+        <class>com.cep.entity.user.ClassCourseInfo</class>
+        <class>com.cep.entity.user.CourseInfo</class>
+        <class>com.cep.entity.user.FamilyInfo</class>
+        <class>com.cep.entity.user.FamilyRoleType</class>
+        <class>com.cep.entity.user.FoodBaseInfo</class>
+        <class>com.cep.entity.user.GradeInfo</class>
+        <class>com.cep.entity.user.GradeNumberInfo</class>
+        <class>com.cep.entity.user.HealthBaseInfo</class>
+        <class>com.cep.entity.user.SchoolInfo</class>
+        <class>com.cep.entity.user.SmsVerificationCode</class>
+        <class>com.cep.entity.user.SmsVerificationType</class>
+        <class>com.cep.entity.user.StageInfo</class>
+        <class>com.cep.entity.user.SysIdDesc</class>
+        <class>com.cep.entity.user.SysPrivilegeDesc</class>
+        <class>com.cep.entity.user.SysPrivilegeUser</class>
+        <class>com.cep.entity.user.TeacherSchoolRoleInfo</class>
+        <class>com.cep.entity.user.TeacherSchoolRoleType</class>
+        <class>com.cep.entity.user.TextbookVersionInfo</class>
+        <class>com.cep.entity.user.UserChildInfo</class>
+        <class>com.cep.entity.user.UserCookie</class>
+        <class>com.cep.entity.user.UserFamilyInfo</class>
+        <class>com.cep.entity.user.UserImInfo</class>
+        <class>com.cep.entity.user.UserLoginRecord</class>
+        <class>com.cep.entity.user.UserOprRecord</class>
+        <class>com.cep.entity.user.UserPushInfo</class>
+        <class>com.cep.entity.user.UserRoleType</class>
+        <class>com.cep.entity.user.UserStudentInfo</class>
+        <class>com.cep.entity.user.UserTeacherInfo</class>
+        <class>com.cep.entity.user.ViewClassBaseInfo</class>
+        <class>com.cep.entity.user.ViewSchoolInfo</class>
+        <class>com.cep.entity.user.ViewSysPrivilegeDesc</class>
+        <class>com.cep.entity.user.ViewSysPrivilegeUser</class>
+        <class>com.cep.entity.user.ViewUserBaseInfo</class>
+        <class>com.cep.entity.user.ViewUserFamilyInfo</class>
+        <class>com.cep.entity.user.ViewUserSimpleInfo</class>
+        <class>com.cep.entity.user.ViewUserStudentInfo</class>
+        <class>com.cep.entity.user.ViewUserTeacherInfo</class>
+        <class>com.cep.entity.user.ImgTextClassInfo</class>
+        <class>com.cep.entity.user.ImgTextUserInfo</class>
+        <class>com.cep.entity.user.ViewImgTextCommentInfo</class>
+        <class>com.cep.entity.user.ViewImgTextFileInfo</class>
+        <class>com.cep.entity.user.ViewImgTextPraiseInfo</class>
+        <class>com.cep.entity.imgText.ImgTextClassInfo</class>
+        <class>com.cep.entity.imgText.ImgTextUserInfo</class>
+        <class>com.cep.entity.imgText.view.ViewClassBaseInfo</class>
+        <class>com.cep.entity.imgText.view.ViewSchoolInfo</class>
+        <class>com.cep.entity.imgText.view.ViewSysPrivilegeDesc</class>
+        <class>com.cep.entity.imgText.view.ViewSysPrivilegeUser</class>
+        <class>com.cep.entity.imgText.view.ViewUserBaseInfo</class>
+        <class>com.cep.entity.imgText.view.ViewUserFamilyInfo</class>
+        <class>com.cep.entity.imgText.view.ViewUserSimpleInfo</class>
+        <class>com.cep.entity.imgText.view.ViewUserStudentInfo</class>
+        <class>com.cep.entity.imgText.view.ViewUserTeacherInfo</class>
+        <class>com.cep.entity.imgText.ImgTextLabelInfo</class>
+        <class>com.cep.entity.imgText.view.ViewImgTextClassInfo</class>
+        <class>com.cep.entity.imgText.view.ViewImgTextReadUserInfo</class>
+        <class>com.cep.entity.imgText.view.ViewImgTextUserInfo</class>
+        <class>com.cep.entity.master.IoBaseInfo</class>
+        <properties>
+            <property name="toplink.jdbc.url" value="jdbc:mysql://192.168.0.99:3306/cep_img_text"/>
+            <property name="toplink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="toplink.jdbc.user"/>
+            <property name="toplink.jdbc.password"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://192.168.0.99:3306/fsc_news"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value="test"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:mysql://192.168.0.99:3306/fsc_news"/>
+            <property name="openjpa.ConnectionDriverName" value="com.mysql.jdbc.Driver"/>
+            <property name="openjpa.ConnectionUserName" value="root"/>
+            <property name="openjpa.ConnectionPassword" value="test"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:mysql://192.168.0.99:3306/fsc_news"/>
+            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="eclipselink.jdbc.user" value="root"/>
+            <property name="eclipselink.jdbc.password" value="test"/>
+        </properties>
+    </persistence-unit>
+</persistence>
