@@ -4,6 +4,7 @@ import com.cep.entity.master.UserBaseInfo;
 import com.cep.entity.master.UserPasswordInfo;
 import com.cep.service.HxService;
 import com.cep.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,8 +27,6 @@ public class HxController {
     @ApiIgnore
     @RequestMapping(value = "/addUser/{userName}")
     public void addUser(@PathVariable("userName") String userName) {
-
-
     }
 
     @ApiIgnore
@@ -64,7 +63,7 @@ public class HxController {
         }
     }
 
-    @ApiIgnore
+    @ApiOperation(value = "addUsers", httpMethod = "GET")
     @RequestMapping(value = "/addAllUsers")
     public void addAllUsers() {
         List<UserBaseInfo> users = userService.getAllUsers();

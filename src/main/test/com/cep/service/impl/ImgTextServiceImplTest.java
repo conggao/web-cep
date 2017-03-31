@@ -56,9 +56,5 @@ public class ImgTextServiceImplTest {
             System.out.println("fail");
         }
     }
-    /**
-     * 查询活动列表
-     */
-
 }
 
