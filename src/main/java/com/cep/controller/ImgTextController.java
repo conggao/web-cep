@@ -27,8 +27,6 @@ public class ImgTextController {
         }
         return "创建成功";
     }
-/*    public ImgTextSimpleRsp get(){
-        ImgTextSimpleRsp rsp = imgTextService.
-    }*/
+
 
 }
