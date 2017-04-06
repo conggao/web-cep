@@ -27,6 +27,7 @@ public class HxController {
     @ApiIgnore
     @RequestMapping(value = "/addUser/{userName}")
     public void addUser(@PathVariable("userName") String userName) {
+
     }
 
     @ApiIgnore
@@ -53,13 +54,11 @@ public class HxController {
         List<UserBaseInfo> users = userService.getAllUsers();
         for (UserBaseInfo user : users) {
             System.out.println(user.getUserName());
-            if (user.getUserName() != "13923789392") {
                 if (hxService.delUser(user.getUserName())) {
                     System.out.println(user.getRealName() + "success");
                 } else {
                     System.out.println("fail");
                 }
-            }
         }
     }
 

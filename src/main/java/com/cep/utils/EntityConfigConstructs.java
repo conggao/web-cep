@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * Created by pc on 2017/3/2.
  */
+//生成映射实体的配置
 public class EntityConfigConstructs {
     public List<String> getFileName() {
         File[] files = new File("D:\\MyIJ\\web_cep\\src\\main\\java\\com\\cep\\entity\\imgText\\view").listFiles();
