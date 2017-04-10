@@ -26,9 +26,8 @@ public class UserController {
         this.userService = userService;
     }
 
-    /*  @ApiOperation(value = "获取登录的token",httpMethod = "GET")
-      @ApiImplicitParam(value = "用户的id",name = "userId",required = true,dataType = "Long")*/
-    @ApiIgnore
+    @ApiOperation(value = "获取登录的token", httpMethod = "GET")
+    @ApiImplicitParam(value = "用户的id", name = "userId", required = true, dataType = "Long")
     @RequestMapping(value = "/getToken/{userId}", method = RequestMethod.GET)
     @ResponseBody
     public String getUserToken(@PathVariable("userId") Long userId) {

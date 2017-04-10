@@ -1,8 +1,8 @@
 package com.cep.utils;
 
 import com.alibaba.fastjson.JSON;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+/*import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;*/
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -31,10 +31,11 @@ public class JsonUtil {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-        GsonBuilder builder = new GsonBuilder();
+        return "";
+   /*     GsonBuilder builder = new GsonBuilder();
         Gson creater = builder.setPrettyPrinting().create();
         Gson creater1 = builder.serializeNulls().create();
-        return creater1.toJson(o);
+        return creater1.toJson(o);*/
     }
 
     private static Object getDefaultValue(Class clazz) {

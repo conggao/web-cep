@@ -7,8 +7,10 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.*;
@@ -24,10 +26,10 @@ public class ImgTextController {
 
     //@ApiOperation(value = "创建图文",httpMethod = "POST")
     @ApiOperation(value = "createImgText", httpMethod = "POST")
-    @ApiImplicitParam(name = "req", value = "imgTextReq", required = true, dataType = "ImgTextCreateDetailReq")
-    @RequestMapping(value = "/publish", method = RequestMethod.POST)
-    @ApiIgnore
-    public String publish(ImgTextCreateReq req) {
+    @ApiImplicitParam(name = "req", value = "imgTextReq", required = true, dataType = "ImgTextCreateReq")
+    @RequestMapping(value = "/publish", method = RequestMethod.POST,produces = "application/json")
+    @ResponseBody
+    public String publish(@RequestBody ImgTextCreateReq req) {
         if (false == imgTextService.publish(req, 1)) {
             return "创建失败";
         }
