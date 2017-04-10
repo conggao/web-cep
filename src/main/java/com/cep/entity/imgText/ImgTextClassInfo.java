@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by pc on 2017/3/2.
  */
 @Entity
-@Table(name = "img_text_class_info", schema = "cep_img_text", catalog = "")
+@Table(name = "img_text_class_info", schema = "cep_img_text", catalog = "cep_img_text")
 public class ImgTextClassInfo {
     private long id;
     private long classId;

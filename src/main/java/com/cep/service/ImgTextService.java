@@ -1,6 +1,7 @@
 package com.cep.service;
 
 import com.cep.entity.imgText.ImgTextBaseInfo;
+import com.cep.entity.imgText.ImgTextClassInfo;
 import com.cep.entity.imgText.protocol.ImgTextCreateReq;
 import com.cep.entity.imgText.protocol.ImgTextDetailRsp;
 import com.cep.entity.imgText.protocol.ImgTextSimpleRsp;
@@ -14,7 +15,13 @@ import java.util.List;
 public interface ImgTextService {
     boolean addImgText(ImgTextBaseInfo activityBaseInfo);
 
+    boolean addImgTextClass(ImgTextClassInfo info);
+
     List<ViewImgTextBaseInfo> findViewImgTextList();
+
+    List<ImgTextBaseInfo> findImgTextList();
+
+    boolean modifyImgText(ImgTextBaseInfo info);
 
     boolean publish(ImgTextCreateReq req, int type);
 

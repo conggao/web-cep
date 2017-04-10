@@ -6,9 +6,64 @@ public class ImgTextCreateReq
 {
     private String     title;
     private String     content;
+    private Integer    schoolId;
+    private Boolean    isCanComment;
+    private Boolean    isTop;
+    private Boolean    isReceipt;
     private List<Long> listClassId;
     private List<Long> listFileId;
     private List<Long> listUserId;
+    private List<Long> listLabelId;
+
+    public List<Long> getListLabelId()
+    {
+        return listLabelId;
+    }
+
+    public void setListLabelId(List<Long> listLabelId)
+    {
+        this.listLabelId = listLabelId;
+    }
+
+    public Integer getSchoolId()
+    {
+        return schoolId;
+    }
+
+    public void setSchoolId(Integer schoolId)
+    {
+        this.schoolId = schoolId;
+    }
+
+    public boolean getIsCanComment()
+    {
+        return isCanComment;
+    }
+
+    public boolean isTop()
+    {
+        return isTop;
+    }
+
+    public void setTop(boolean isTop)
+    {
+        this.isTop = isTop;
+    }
+
+    public boolean isReceipt()
+    {
+        return isReceipt;
+    }
+
+    public void setReceipt(boolean isReceipt)
+    {
+        this.isReceipt = isReceipt;
+    }
+
+    public void setIsCanComment(boolean isCanComment)
+    {
+        this.isCanComment = isCanComment;
+    }
 
     public List<Long> getListUserId()
     {

@@ -42,8 +42,7 @@ public class ImgTextServiceImplTest {
         ImgTextBaseInfo imgTextBaseInfo = new ImgTextBaseInfo();
         imgTextBaseInfo.setTitle("活动的标题");
         imgTextBaseInfo.setContent("活动的内容");
-        imgTextBaseInfo.setClassId(1l);
-        imgTextBaseInfo.setComment(false);
+        imgTextBaseInfo.setCanComment(false);
         imgTextBaseInfo.setCommentNum(0);
         imgTextBaseInfo.setPraiseNum(0);
         imgTextBaseInfo.setType(1);

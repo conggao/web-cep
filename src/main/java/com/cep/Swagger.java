@@ -25,8 +25,9 @@ public class Swagger {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("cep项目api文档")
-                .description("灵畅互动")
+                .title("cep api")
+                .description("gk")
+                .termsOfServiceUrl("https://github.com/conggao/")
                 .contact("gaocong")
                 .version("1.0")
                 .build();

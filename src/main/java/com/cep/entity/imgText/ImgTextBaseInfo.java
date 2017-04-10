@@ -4,26 +4,23 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by pc on 2017/3/2.
+ * Created by pc on 2017/4/7.
  */
 @Entity
-@Table(name = "img_text_base_info", schema = "cep_img_text", catalog = "")
+@Table(name = "img_text_base_info", schema = "cep_img_text", catalog = "cep_img_text")
 public class ImgTextBaseInfo {
     private long id;
-    private int schoolId;
+    private Integer schoolId;
     private int type;
-    private Long classId;
     private String title;
     private String content;
-    private boolean isComment;
     private Integer praiseNum;
     private Integer commentNum;
     private long createUserId;
     private Timestamp createTime;
     private Timestamp lastUpdateTime;
     private boolean isDel;
-    private Long labelId;
-    private boolean isCanComment;
+    private Boolean isCanComment;
 
     @Id
     @Column(name = "id")
@@ -37,11 +34,11 @@ public class ImgTextBaseInfo {
 
     @Basic
     @Column(name = "schoolId")
-    public int getSchoolId() {
+    public Integer getSchoolId() {
         return schoolId;
     }
 
-    public void setSchoolId(int schoolId) {
+    public void setSchoolId(Integer schoolId) {
         this.schoolId = schoolId;
     }
 
@@ -53,16 +50,6 @@ public class ImgTextBaseInfo {
 
     public void setType(int type) {
         this.type = type;
-    }
-
-    @Basic
-    @Column(name = "classId")
-    public Long getClassId() {
-        return classId;
-    }
-
-    public void setClassId(Long classId) {
-        this.classId = classId;
     }
 
     @Basic
@@ -83,16 +70,6 @@ public class ImgTextBaseInfo {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    @Basic
-    @Column(name = "isComment")
-    public boolean isComment() {
-        return isComment;
-    }
-
-    public void setComment(boolean comment) {
-        isComment = comment;
     }
 
     @Basic
@@ -155,6 +132,16 @@ public class ImgTextBaseInfo {
         isDel = del;
     }
 
+    @Basic
+    @Column(name = "isCanComment")
+    public Boolean getCanComment() {
+        return isCanComment;
+    }
+
+    public void setCanComment(Boolean canComment) {
+        isCanComment = canComment;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -163,12 +150,10 @@ public class ImgTextBaseInfo {
         ImgTextBaseInfo that = (ImgTextBaseInfo) o;
 
         if (id != that.id) return false;
-        if (schoolId != that.schoolId) return false;
         if (type != that.type) return false;
-        if (isComment != that.isComment) return false;
         if (createUserId != that.createUserId) return false;
         if (isDel != that.isDel) return false;
-        if (classId != null ? !classId.equals(that.classId) : that.classId != null) return false;
+        if (schoolId != null ? !schoolId.equals(that.schoolId) : that.schoolId != null) return false;
         if (title != null ? !title.equals(that.title) : that.title != null) return false;
         if (content != null ? !content.equals(that.content) : that.content != null) return false;
         if (praiseNum != null ? !praiseNum.equals(that.praiseNum) : that.praiseNum != null) return false;
@@ -176,6 +161,7 @@ public class ImgTextBaseInfo {
         if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) return false;
         if (lastUpdateTime != null ? !lastUpdateTime.equals(that.lastUpdateTime) : that.lastUpdateTime != null)
             return false;
+        if (isCanComment != null ? !isCanComment.equals(that.isCanComment) : that.isCanComment != null) return false;
 
         return true;
     }
@@ -183,38 +169,17 @@ public class ImgTextBaseInfo {
     @Override
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + schoolId;
+        result = 31 * result + (schoolId != null ? schoolId.hashCode() : 0);
         result = 31 * result + type;
-        result = 31 * result + (classId != null ? classId.hashCode() : 0);
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (content != null ? content.hashCode() : 0);
-        result = 31 * result + (isComment ? 1 : 0);
         result = 31 * result + (praiseNum != null ? praiseNum.hashCode() : 0);
         result = 31 * result + (commentNum != null ? commentNum.hashCode() : 0);
         result = 31 * result + (int) (createUserId ^ (createUserId >>> 32));
         result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
         result = 31 * result + (lastUpdateTime != null ? lastUpdateTime.hashCode() : 0);
         result = 31 * result + (isDel ? 1 : 0);
+        result = 31 * result + (isCanComment != null ? isCanComment.hashCode() : 0);
         return result;
-    }
-
-    @Basic
-    @Column(name = "labelId")
-    public Long getLabelId() {
-        return labelId;
-    }
-
-    public void setLabelId(Long labelId) {
-        this.labelId = labelId;
-    }
-
-    @Basic
-    @Column(name = "isCanComment")
-    public boolean isCanComment() {
-        return isCanComment;
-    }
-
-    public void setCanComment(boolean canComment) {
-        isCanComment = canComment;
     }
 }

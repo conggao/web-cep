@@ -1,8 +1,10 @@
 package com.cep.service.impl;
 
+import com.cep.dao.imgText.ImgTextClassRepository;
 import com.cep.dao.imgText.ImgTextFileRepository;
 import com.cep.dao.imgText.ImgTextRepository;
 import com.cep.entity.imgText.ImgTextBaseInfo;
+import com.cep.entity.imgText.ImgTextClassInfo;
 import com.cep.entity.imgText.ImgTextFileInfo;
 import com.cep.entity.imgText.protocol.ImgTextCreateReq;
 import com.cep.entity.imgText.protocol.ImgTextDetailRsp;
@@ -25,6 +27,8 @@ public class ImgTextServiceImpl implements ImgTextService {
     private ImgTextRepository imgTextRepository;
     @Autowired
     private ImgTextFileRepository imgTextFileRepository;
+    @Autowired
+    private ImgTextClassRepository imgTextClassRepository;
 
     @Override
     public boolean addImgText(ImgTextBaseInfo imgTextBaseInfo) {
@@ -35,11 +39,34 @@ public class ImgTextServiceImpl implements ImgTextService {
         return false;
     }
 
+    @Override
+    public boolean addImgTextClass(ImgTextClassInfo info) {
+        imgTextClassRepository.save(info);
+        return true;
+    }
+
 
     @Override
     public List<ViewImgTextBaseInfo> findViewImgTextList() {
         List<ViewImgTextBaseInfo> listImgText = imgTextRepository.findListImgTextBaseInfo();
         return listImgText;
+    }
+
+    @Override
+    public List<ImgTextBaseInfo> findImgTextList() {
+        List<ImgTextBaseInfo> listImgText = imgTextRepository.findAll();
+        return listImgText;
+    }
+
+    @Override
+    public boolean modifyImgText(ImgTextBaseInfo info) {
+        ImgTextBaseInfo imgTextBaseInfo = imgTextRepository.save(info);
+        if (imgTextBaseInfo == null) {
+            return false;
+        } else {
+            return true;
+        }
+
     }
 
     /**
@@ -49,17 +76,15 @@ public class ImgTextServiceImpl implements ImgTextService {
      * @return
      */
     @Override
-    public boolean publish(ImgTextCreateReq req,int type) {
+    public boolean publish(ImgTextCreateReq req, int type) {
         ImgTextBaseInfo imgTextBaseInfo = new ImgTextBaseInfo();
         imgTextBaseInfo.setType(type);
         setPublish(req, imgTextBaseInfo);
-        if (null == imgTextRepository.save(imgTextBaseInfo))
-        {
+        if (null == imgTextRepository.save(imgTextBaseInfo)) {
             return false;
         }
 
-        if (false == setFileList(req, imgTextBaseInfo.getId()))
-        {
+        if (false == setFileList(req, imgTextBaseInfo.getId())) {
             return false;
         }
         return true;
@@ -79,6 +104,7 @@ public class ImgTextServiceImpl implements ImgTextService {
 
     /**
      * 获取详情
+     *
      * @return
      */
     @Override
@@ -88,6 +114,7 @@ public class ImgTextServiceImpl implements ImgTextService {
 
     /**
      * 为图文绑定附件列表
+     *
      * @param reqValue
      * @param imgTextId
      * @return
@@ -111,6 +138,7 @@ public class ImgTextServiceImpl implements ImgTextService {
 
     /**
      * 为图文绑定基本属性
+     *
      * @param reqValue
      * @param imgTextBaseInfo
      * @return

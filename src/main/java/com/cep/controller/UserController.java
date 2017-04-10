@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * Created by pc on 2016/11/15.
@@ -25,9 +26,10 @@ public class UserController {
         this.userService = userService;
     }
 
-    @ApiOperation(value = "获取登录的token",httpMethod = "GET")
-    @ApiImplicitParam(value = "用户的id",name = "userId",required = true,dataType = "Long")
-    @RequestMapping(value = "/getToken/{userId}",method = RequestMethod.GET)
+    /*  @ApiOperation(value = "获取登录的token",httpMethod = "GET")
+      @ApiImplicitParam(value = "用户的id",name = "userId",required = true,dataType = "Long")*/
+    @ApiIgnore
+    @RequestMapping(value = "/getToken/{userId}", method = RequestMethod.GET)
     @ResponseBody
     public String getUserToken(@PathVariable("userId") Long userId) {
         String token = userService.getToken(userId);

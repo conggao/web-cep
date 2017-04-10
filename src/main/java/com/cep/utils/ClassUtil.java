@@ -8,8 +8,12 @@ import java.lang.reflect.Method;
 /**
  * Created by pc on 2017/4/6.
  */
-public class ClassUtil<T> {
-    public String getClassSetter(Class<T> infoClass, String objName) {
+
+/**
+ * 初始化对象，生成setter
+ */
+public class ClassUtil {
+    public static String getClassSetter(Class infoClass, String objName) {
         StringBuffer sb = new StringBuffer();
         for (Method method : infoClass.getMethods()) {
             String methodName = method.getName();
